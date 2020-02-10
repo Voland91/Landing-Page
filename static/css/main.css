@@ -779,7 +779,7 @@ User interface
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background: url("../img/article_image_1.png/");
+    background: url("../img/article_image_1.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

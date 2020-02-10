@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+$breakpoints: (mobile: 768px,
+    tablet: 1025px,
+    desktop: 1440px,
+);
+
+$orientations: (portrait: portrait,
+    landscape: landscape,
+);
+
+$colors: (main: #202124,
+    white: #fff,
+    gray: #EBEDED,
+    pink: #FA6980,
+    text: #A6ADB4,
+    bg: #F6F8F9,
+    footer: #CBD0D3,
+    blue: #72ACFF,
+    red: #FF4D4D);
+
+$sizes: (media: 400px,
+    inner: (desktop: 960px,
+        tablet: 760px,
+        mobile: 320px),
+);
+
+$font-sizes: (main: 10px,
+    h1: 1.6rem,
+    text: 1.6rem,
+    title: 2.4rem,
+    small: 1.3rem,
+    smallest: 1.1rem);
+
+$fonts: (main: #{'Helvetica', 'Arial', sans-serif},
+    adobe: ('acumin-pro', sans-serif));
+
+$defaults: (border-radius: 4px,
+    line-height: 1.2);
+
+$paddings: (mobile: 24px, tablet: 24px 80px);
+
+$white-space: 1em;
+$form-control-height: 2rem;
+$standard-margin: 18px 0;
+$rounded: 6px;
+$standard-padding: 24px;

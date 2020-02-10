@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.page {
+    width: 100vw;
+    @include flex-col;
+    background-color: color(bg);
+    overflow-x: hidden;
+}

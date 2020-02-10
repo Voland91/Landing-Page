@@ -1,0 +1,437 @@
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+.section-title {
+    font-size: font-size(title);
+    text-transform: uppercase;
+    color: color(main);
+    margin: $standard-margin;
+
+    &--on-photo {
+        color: color(white);
+    }
+}
+
+.section-hr {
+    border: 1px solid color(main);
+    border-radius: $rounded;
+    align-self: stretch;
+}
+
+.news-container {
+    @include media(breakpoint(tablet), ) {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        @include flex-row-space;
+        height: 50vh;
+        min-height: 600px;
+
+        &--big-news {
+            height: 95vh;
+            min-height: 950px;
+        }
+    }
+}
+
+.news {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+
+    &--white {
+        background-color: color(white);
+    }
+
+    &--padding {
+        padding-bottom: 0px;
+    }
+
+    &__title {
+        font-size: font-size(title);
+        color: color(white);
+        max-height: 3.4em;
+        overflow: hidden;
+    }
+
+
+
+    @include media(320px, breakpoint(mobile)) {
+        @include flex-col;
+        padding: padding(mobile);
+
+        &--title {
+            padding: 0 24px;
+        }
+
+    }
+
+    @include media(breakpoint(mobile), ) {
+        @include flex-col;
+        padding: padding(tablet);
+
+        &--title {
+            padding: 0 80px;
+        }
+
+    }
+}
+
+
+.text {
+    font-size: font-size(text);
+    font-weight: normal;
+    color: color(main);
+}
+
+
+/* WORLD NEWS*/
+
+.world-news {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: url("/src/img/article_image_1.png");
+    @include cover-photo;
+
+    &__hr {
+        margin: $standard-margin;
+        border-color: color(white);
+    }
+
+    &__title {
+        margin: $standard-margin;
+        line-height: 34px;
+    }
+
+    &__text {
+        line-height: 26px;
+        color: color(white);
+        max-height: 52px;
+        overflow: hidden;
+    }
+
+    &__btn {
+        margin: $standard-margin;
+    }
+
+    @include media(320px, breakpoint(mobile)) {
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/src/img/article_image_1.png");
+        @include cover-photo;
+        min-height: 50vh;
+
+        &__text {
+            margin: $standard-margin;
+        }
+
+        &__title {
+            margin: $standard-margin;
+        }
+    }
+
+    @include media(breakpoint(mobile), breakpoint(tablet)) {
+        min-height: 40vh;
+
+        &__text {
+            margin: 0;
+        }
+
+        &__title {
+            margin: 0;
+        }
+    }
+
+    @include media(breakpoint(tablet), ) {
+        width: 60%;
+    }
+}
+
+
+
+/* SWIPER */
+
+.swiper-container {
+    width: 100%;
+}
+
+.more-news__container {
+    @include flex-row-space;
+}
+
+.swiper__buttons-wrapper {
+    width: 10%;
+    max-width: 50px;
+    @include flex-row-space;
+}
+
+.swiper__nav-button {
+    border: none;
+    background-color: transparent;
+    fill: color(text);
+    cursor: pointer;
+
+    &:hover {
+        fill: color(main);
+    }
+}
+
+
+
+
+/* MORE NEWS*/
+
+.more-news {
+    &__hr {
+        margin: $standard-margin;
+        border-color: color(gray);
+    }
+
+    &__category-name {
+        font-size: font-size(text);
+        margin: 0;
+        text-transform: uppercase;
+        color: color(pink);
+        margin: $standard-margin;
+
+        &--on-photo {
+            color: color(white);
+        }
+    }
+
+    @include media(breakpoint(mobile), breakpoint(tablet)) {
+        min-height: 35vh;
+    }
+
+    @include media(breakpoint(tablet), ) {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.news-dsc {
+
+    &__title {
+        font-size: font-size(small);
+        margin: $standard-margin;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+        color: color(text);
+        font-family: font(adobe);
+        // margin: 5px 0;
+        line-height: 26px;
+        max-height: 52px;
+        overflow: hidden;
+    }
+}
+
+.post {
+    display: flex;
+    margin: $standard-margin;
+    margin-top: 5px;
+
+    &__icon {
+        fill: color(text);
+        width: 16px;
+        height: 16px;
+    }
+
+    &__icon--white {
+        fill: color(white);
+    }
+
+
+    &__text {
+        color: color(text);
+        font-size: font-size(small);
+        margin-left: 5px;
+
+        &--on-photo {
+            color: color(white);
+        }
+    }
+}
+
+
+
+/* TRENDING */
+
+.trending {
+
+    &__container {
+        @include flex-col;
+        background-color: color(white);
+        border-radius: $rounded;
+        margin: $standard-margin;
+    }
+
+    &__photo {
+        min-height: 50%;
+        border-radius: 6px 6px 0 0;
+        background-image: url('/src/img/trending_photo_1.png');
+        @include cover-photo;
+
+        &--second-photo {
+            background-image: url('/src/img/trending_photo_2.png');
+        }
+
+        &--third-photo {
+            background-image: url('/src/img/trending_photo_3.png');
+        }
+    }
+
+    &__news {
+        min-height: 50%;
+        padding: 12px 24px;
+    }
+
+    @include media(320px, breakpoint(mobile)) {
+        &__news {
+            @include flex-col-space;
+        }
+
+        &__container {
+            height: 40vh;
+        }
+    }
+
+    @include media(breakpoint(mobile), ) {
+
+        &__news {
+            @include flex-col-center;
+        }
+
+        &__container {
+            height: 35vh;
+            min-height: 350px;
+        }
+
+    }
+}
+
+
+/* HAPPENING NOW */
+
+.big-news {
+
+    &__container {
+        background-color: color(white);
+        height: 40vh;
+        border-radius: $rounded;
+        margin: $standard-margin;
+        background-image: url('/src/img/big-news-photo-1.png');
+        @include cover-photo;
+        padding: $standard-padding;
+
+        &--second-photo {
+            background-image: url('/src/img/big-news-photo-2.png');
+        }
+    }
+
+    @include media(320px, breakpoint(mobile)) {
+        &__container {
+            @include flex-col-space;
+        }
+    }
+
+    @include media(breakpoint(mobile), ) {
+
+        &__container {
+            @include flex-col;
+            justify-content: flex-end;
+        }
+
+        &__category-name {
+            flex-grow: 1;
+        }
+
+        &__title {
+            margin: 0;
+        }
+    }
+
+    @include media(breakpoint(tablet), ) {
+        padding-right: 0;
+        width: 60%;
+
+        &__container {
+            height: 100%;
+        }
+    }
+}
+
+
+/* HR BETWEEN SECTIONS */
+.between-sections {
+    border-color: color(gray);
+    margin: 0 24px;
+
+    @include media(breakpoint(tablet), ) {
+        display: none;
+    }
+}
+
+
+
+/* SMALL NEWS */
+
+.small-news {
+
+    &__container {
+        @include flex-col;
+        height: 30vh;
+        margin: $standard-margin;
+    }
+
+    &__image {
+        height: calc(2*(100%/3));
+        border-radius: $rounded;
+        background-image: url('/src/img/small-news-photo-1.png');
+        @include cover-photo;
+
+        &--second {
+            background-image: url('/src/img/small-news-photo-2.png');
+        }
+
+        &--third {
+            background-image: url('/src/img/small-news-photo-3.png');
+        }
+    }
+
+    &__title {
+        font-family: font(adobe);
+        color: color(main);
+        font-size: font-size(text);
+        margin: $standard-margin;
+    }
+
+    @include media(breakpoint(mobile), breakpoint(tablet)) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+        width: 100%;
+
+        &__container {
+            width: 47%;
+            flex-shrink: 0;
+        }
+
+        &__container:nth-child(3) {
+            display: none;
+        }
+    }
+
+    @include media(breakpoint(tablet), ) {
+        width: 40%;
+
+        &__container {
+            height: 100%;
+            margin-bottom: 0;
+        }
+    }
+}

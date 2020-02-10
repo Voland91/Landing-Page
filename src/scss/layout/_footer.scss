@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer-container {
+    background-color: color(text);
+}
+
+
+.footer {
+    text-transform: capitalize;
+
+    &__list-wrapper {
+        @include flex-row-space;
+    }
+
+    &__list {
+        list-style: none;
+        color: rgba(255, 255, 255, .5);
+    }
+
+    &__item {
+        // margin: $standard-margin;
+
+        &:hover {
+            color: color(main);
+        }
+    }
+
+    &__social-wrapper {
+        @include flex-row-space;
+    }
+
+    &__icon {
+        cursor: pointer;
+        fill: color(white);
+        width: 16px;
+        height: 16px;
+
+        &:hover {
+            fill: color(main);
+        }
+    }
+
+    &__form-btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    &__form-icon {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    &__form-sub {
+        display: none;
+    }
+
+    &__contact-dsc {
+        text-transform: none;
+        margin-top: 15px;
+    }
+
+    &__social-wrapper {
+        width: 50%;
+        align-self: flex-end;
+    }
+
+    @include media(320px, breakpoint(mobile)) {
+        position: absolute;
+        top: 60vh;
+        left: 0;
+        width: 75vw;
+        height: 40vh;
+        background-color: rgba(0, 0, 0, .23);
+        @include flex-col-space;
+        padding: 20px 40px;
+        transition: .3s;
+        transform: translateX(-100%);
+        z-index: 3;
+
+        &--active {
+            transform: translateX(0px);
+        }
+
+        &__logo {
+            display: none;
+        }
+
+        &__list-wrapper {
+            height: 70%;
+
+        }
+
+        &__list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: font-size(smallest);
+        }
+
+        &__item {
+            margin: $standard-margin;
+        }
+
+        &__contact {
+            display: none;
+        }
+
+        &__top-menu-item {
+            display: none;
+        }
+
+        &__social-wrapper {
+            width: 70%;
+        }
+
+    }
+
+    @include media(breakpoint(mobile), breakpoint(tablet)) {
+        height: 30vh;
+        @include flex-row-space;
+        padding: 60px 80px;
+        flex-wrap: wrap;
+
+        &__logo {
+            width: 50%;
+        }
+
+        &__list-wrapper {
+            width: 47%;
+            height: 60%;
+
+        }
+
+        &__list {
+            color: color(footer);
+            font-size: font-size(small);
+            flex-wrap: wrap;
+            width: 100%;
+            display: flex;
+            flex-direction: column
+        }
+
+        &__item {
+            margin-top: 10px;
+        }
+
+        &__contact {
+            color: color(footer);
+            width: 47%;
+            align-self: flex-end;
+            position: relative;
+        }
+
+        &__email-form {
+            width: 100%;
+            height: 40px;
+            @include flex-row-space;
+            position: relative;
+        }
+
+        &__error-msg {
+            display: none;
+            background-color: color(red);
+            font-family: font(adobe);
+            font-size: font-size(small);
+            border-radius: $rounded;
+            width: 120px;
+            text-align: center;
+            color: color(white);
+            position: absolute;
+            left: 105%;
+            line-height: 40px;
+
+            &:after {
+                position: absolute;
+                z-index: 3;
+                // display: none;
+                bottom: 50%;
+                left: 0%;
+                width: 10px;
+                height: 10px;
+                background-color: color(red);
+                margin-bottom: -4px;
+                content: '';
+                transform: translate(-50%, 0) rotate(45deg);
+                transition: transform 0.2s ease-out;
+            }
+
+        }
+
+        &__form-input {
+            padding-left: 20px;
+            width: 100%;
+            color: color(footer);
+            font-size: font-size(small);
+            border: 2px solid rgba(255, 255, 255, .1);
+            border-radius: $rounded;
+            background-color: transparent;
+            outline: 0;
+
+            &:focus {
+                border-color: color(blue);
+            }
+
+            &::-webkit-input-placeholder {
+                color: color(footer);
+            }
+
+            &:invalid {
+                box-shadow: none;
+            }
+
+            &:invalid:not(:focus):not(:placeholder-shown),
+            &:invalid:focus:not(:placeholder-shown) {
+                border-color: color(red);
+
+                ~.footer__error-msg {
+                    display: block;
+                }
+            }
+        }
+
+        &__social-wrapper {
+            width: 20%;
+        }
+    }
+
+    @include media(breakpoint(tablet), ) {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        height: 30vh;
+        max-height: 300px;
+        @include flex-row-space;
+        padding: 60px 80px;
+        flex-wrap: wrap;
+
+        &__list-wrapper {
+            width: 40%;
+            max-width: 300px;
+            height: 70%;
+        }
+
+        &__list {
+            color: color(footer);
+            font-size: font-size(small);
+            flex-wrap: wrap;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__item {
+            margin-bottom: 10px;
+        }
+
+        &__contact {
+            color: color(footer);
+            position: relative;
+            width: 30%;
+            max-width: 250px;
+        }
+
+        &__email-form {
+            width: 100%;
+            height: 40px;
+            @include flex-row-space;
+            position: relative;
+        }
+
+        &__error-msg {
+            display: none;
+            background-color: color(red);
+            font-family: font(adobe);
+            font-size: font-size(small);
+            border-radius: $rounded;
+            width: 120px;
+            text-align: center;
+            color: color(white);
+            position: absolute;
+            left: 105%;
+            line-height: 40px;
+
+            &:after {
+                position: absolute;
+                z-index: 3;
+                // display: none;
+                bottom: 50%;
+                left: 0%;
+                width: 10px;
+                height: 10px;
+                background-color: color(red);
+                margin-bottom: -4px;
+                content: '';
+                transform: translate(-50%, 0) rotate(45deg);
+                transition: transform 0.2s ease-out;
+            }
+
+        }
+
+        &__form-input {
+            padding-left: 20px;
+            width: 100%;
+            color: color(footer);
+            font-size: font-size(small);
+            border: 2px solid rgba(255, 255, 255, .1);
+            border-radius: $rounded;
+            background-color: transparent;
+            outline: 0;
+
+            &:focus {
+                border-color: color(blue);
+            }
+
+            &::-webkit-input-placeholder {
+                color: color(footer);
+            }
+
+            &:invalid {
+                box-shadow: none;
+            }
+
+            &:invalid:not(:focus):not(:placeholder-shown),
+            &:invalid:focus:not(:placeholder-shown) {
+                border-color: color(red);
+
+                ~.footer__error-msg {
+                    display: block;
+                }
+            }
+        }
+
+        &__social-wrapper {
+            width: 15%;
+            align-self: auto;
+        }
+    }
+}

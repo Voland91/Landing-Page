@@ -1,0 +1,13 @@
+/* ==========================================================================
+User interface
+========================================================================== */
+.ui-link {
+    @include animate-link;
+
+    color: color(text);
+    cursor: pointer;
+
+    &:hover {
+        @include animate-link-reverse;
+    }
+}

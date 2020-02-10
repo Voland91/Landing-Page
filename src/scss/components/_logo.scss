@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Logos
+   ========================================================================== */
+.logo__image {
+    text-transform: uppercase;
+    color: color(text);
+    font-weight: bold;
+    font-size: font-size(small);
+
+    &:hover {
+        color: color(main);
+    }
+
+    &--active {
+        color: color(pink);
+        font-size: font-size(smallest);
+
+        &:hover {
+            color: color(text);
+        }
+    }
+
+    &--footer {
+        font-family: font(adobe);
+        color: color(white);
+    }
+}
